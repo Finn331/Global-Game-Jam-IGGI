@@ -10,48 +10,71 @@ public class KidnapSystem : MonoBehaviour
     public GameObject fullBag;
     public GameObject npc;
     public GameObject kidnappedText;
-    public bool isKidnapped;
+    public Inventory inventory;
+    public GameObject itemButton;
+
+    public bool canPickup = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        isKidnapped = false;
+        // isKidnapped = false;
         emptyBag.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (kidnappedText.activeSelf && Input.GetKeyDown(KeyCode.E))
+        if (canPickup && Input.GetKeyDown(KeyCode.E))
         {
-            kidnappedText.gameObject.SetActive(false);
             emptyBag.SetActive(false);
             fullBag.SetActive(true);
-            isKidnapped = true;
+            PickupItem();
+            Debug.Log("ambil");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "NPC")
+        Debug.Log("Collided");
+        if (collision.CompareTag("Player"))
         {
-            kidnappedText.SetActive(true);
+            canPickup = true;
         }
+        kidnappedText.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        canPickup = false;
         kidnappedText.SetActive(false);
     }
 
-    public void Kidnap()
+    private void PickupItem()
     {
-
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            if (!inventory.isFull[i])
+            {
+                inventory.isFull[i] = true;
+                Instantiate(itemButton, inventory.slots[i].transform, false);
+                npc.SetActive(false);
+                break;
+            }
+        }
     }
-    public void Release()
+
+    public void SetNPCActive(bool isActive)
     {
-        emptyBag.SetActive(true);
-        fullBag.SetActive(false);
+        if (npc != null)
+        {
+            npc.SetActive(isActive);
+            Debug.Log("NPC diaktifkan atau dinonaktifkan");
+        }
+        else
+        {
+            Debug.LogWarning("NPC reference is null!");
+        }
     }
 }
