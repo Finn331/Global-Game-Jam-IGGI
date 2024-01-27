@@ -50,7 +50,7 @@ public class KidnapSystem : MonoBehaviour
         kidnappedText.SetActive(false);
     }
 
-    private void PickupItem()
+    public void PickupItem()
     {
         for (int i = 0; i < inventory.slots.Length; i++)
         {
