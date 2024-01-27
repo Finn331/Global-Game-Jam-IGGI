@@ -7,6 +7,8 @@ TagManager:
   - Indoor
   - Outdoor
   - Human
+  - NPC
+  - Machine
   layers:
   - Default
   - TransparentFX
