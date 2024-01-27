@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
+    public GameObject emptyBag;
+    public GameObject fullBag;
     public Inventory inventory;
     public int i;
 
@@ -20,6 +22,8 @@ public class Slot : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
+        emptyBag.SetActive(true);
+        fullBag.SetActive(false);
         Debug.Log("Pindah");
     }
 }

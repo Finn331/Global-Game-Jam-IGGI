@@ -5,18 +5,22 @@ using UnityEngine;
 
 public class InteractMachine : MonoBehaviour
 {
+    public Slot slot;
     public GameObject kidnappedText;
 
     void Start()
     {
-
+        slot = GetComponentInChildren<Slot>();
     }
 
     void Update()
     {
         if (kidnappedText.activeSelf && Input.GetKey(KeyCode.V))
         {
-
+            if (slot != null)
+            {
+                // GameObject.Destroy(gameObject);
+            }
         }
     }
 
