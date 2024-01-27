@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e3a0b9c97420141418206eaa11f9aaa8
+guid: 0e256155d4200514a9829697fb614fd9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: asset rumah-sofa_0
+      name: bunker-lantai_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1458
-        height: 781
+        x: 2432
+        y: 265
+        width: 7988
+        height: 597
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc1b553771d9ec9429df193d7a6a8ea0
-      internalID: 1515118905
+      spriteID: 9b5a35dce98dfc040afbffe2664772d0
+      internalID: 1599507061
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      asset rumah-sofa_0: 1515118905
+      bunker-lantai_0: 1599507061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: asset rumah-retakan dinding_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 598
+        width: 271
+        height: 673
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4f932528257534b9c5e85664dd3323
+      internalID: -301865328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset rumah-retakan dinding_1
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 102
+        width: 368
+        height: 1108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f2808289f047d4eaa86f42e082bbcb
+      internalID: 1998506176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset rumah-retakan dinding_2
+      rect:
+        serializedVersion: 2
+        x: 4673
+        y: 0
+        width: 288
+        height: 852
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f584989f45cd3cd4a984660b5abdf992
+      internalID: -201238936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      asset rumah-retakan dinding_0: -301865328
+      asset rumah-retakan dinding_1: 1998506176
+      asset rumah-retakan dinding_2: -201238936
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

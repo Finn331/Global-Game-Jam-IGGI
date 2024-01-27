@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e3a0b9c97420141418206eaa11f9aaa8
+guid: 461e6c5ed010b9241b8644b8e85eb2d1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: asset rumah-sofa_0
+      name: rumah_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1458
-        height: 781
+        width: 2480
+        height: 1333
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc1b553771d9ec9429df193d7a6a8ea0
-      internalID: 1515118905
+      spriteID: a03a98f36a0d63c4ebdd2823d7cb0377
+      internalID: 1724358687
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      asset rumah-sofa_0: 1515118905
+      rumah_0: 1724358687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
