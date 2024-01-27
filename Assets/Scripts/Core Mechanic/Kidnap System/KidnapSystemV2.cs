@@ -90,7 +90,7 @@ public class KidnapSystemV2 : MonoBehaviour
         if (carriedNPC != null && machine != null)
         {
             carriedNPC.GetComponent<SpriteRenderer>().enabled = true;
-
+            carriedNPC.GetComponent<Collider2D>().enabled = true;
             // Set parent dari objek NPC menjadi objek Machine
             carriedNPC.transform.parent = machine.transform;
 
@@ -99,7 +99,7 @@ public class KidnapSystemV2 : MonoBehaviour
             carriedNPC.transform.rotation = machine.transform.rotation;
 
             // Hapus Collider dan komponen lain yang tidak diperlukan dari objek NPC
-            Destroy(carriedNPC.GetComponent<Collider2D>());
+            //Destroy(carriedNPC.GetComponent<Collider2D>());
 
             // Set status Machine terisi berdasarkan tag
             SetMachineOccupied(machine.tag);

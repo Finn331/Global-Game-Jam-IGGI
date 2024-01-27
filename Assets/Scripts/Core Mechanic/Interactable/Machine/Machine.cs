@@ -1,17 +1,27 @@
+using System.Collections;
 using UnityEngine;
-
-public class Machine : MonoBehaviour
+using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
+public class CountdownTimer : MonoBehaviour
 {
-    public GameObject interactingNPC;
-    public float countdownTime;
-    public bool isCountingDown = false;
+    public float countdownTime = 30f;
+    private float currentTime;
+    public TextMeshProUGUI timerText;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void Start()
+    {
+        currentTime = countdownTime;
+        //UpdateTimerText();
+        //StartCoroutine(StartCountdown());
+    }
+
+     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "NPC")
         {
-            interactingNPC = other.gameObject;
-            isCountingDown = true;
+            UpdateTimerText();
+            StartCoroutine(StartCountdown());
         }
     }
 
@@ -19,32 +29,36 @@ public class Machine : MonoBehaviour
     {
         if (other.tag == "NPC")
         {
-            interactingNPC = null;
-            isCountingDown = false;
+            StopCoroutine(StartCountdown());
         }
     }
 
-    void Update()
+    IEnumerator StartCountdown()
     {
-        if (isCountingDown)
+        while (currentTime > 0f)
         {
-            countdownTime -= Time.deltaTime;
-
-            if (countdownTime <= 0f)
-            {
-                DestroyNPC();
-            }
+            yield return new WaitForSeconds(1f);
+            currentTime -= 1f;
+            UpdateTimerText();
         }
+
+        // Waktu habis, lakukan tindakan yang diinginkan di sini
+        Debug.Log("Waktu Habis!");
+
+        // Optional: Anda dapat menambahkan tindakan tambahan saat waktu habis di sini
+
+        // Reset timer untuk penggunaan selanjutnya
+        currentTime = countdownTime;
+        UpdateTimerText();
+        StartCoroutine(StartCountdown());
     }
 
-    void DestroyNPC()
+    void UpdateTimerText()
     {
-        if (interactingNPC != null)
+        // Pastikan timerText tidak null
+        if (timerText != null)
         {
-            Destroy(interactingNPC);
-            interactingNPC = null;
-            isCountingDown = false;
-            countdownTime = 30f; // Reset countdown time for the next interaction
+            timerText.text = "Time: " + Mathf.Ceil(currentTime).ToString();
         }
     }
 }
