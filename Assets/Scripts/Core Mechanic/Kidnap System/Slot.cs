@@ -8,7 +8,7 @@ public class Slot : MonoBehaviour
     public GameObject targetPosition;
     public Inventory inventory;
     private bool isHidden = false;
-    public KidnapSystem kidnapSystem;
+    public KidnapSystem[] kidnapSystem;
     public int i;
 
     public void Update()
@@ -28,8 +28,18 @@ public class Slot : MonoBehaviour
 
         if (kidnapSystem != null)
         {
-            kidnapSystem.SetNPCActive(true);
-            kidnapSystem.transform.position = targetPosition.transform.position;
+            foreach (KidnapSystem kidnapSystem in kidnapSystem)
+            {
+                if (kidnapSystem != null)
+                {
+                    kidnapSystem.SetNPCActive(true);
+                    kidnapSystem.transform.position = targetPosition.transform.position;
+                }
+                else
+                {
+                    Debug.LogWarning("KidnapSystem reference in array is null!");
+                }
+            }
         }
         else
         {

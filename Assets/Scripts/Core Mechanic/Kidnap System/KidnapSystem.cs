@@ -69,7 +69,7 @@ public class KidnapSystem : MonoBehaviour
     {
         if (npc != null)
         {
-            npc.SetActive(isActive);
+            npc.SetActive(true);
             Debug.Log("NPC diaktifkan atau dinonaktifkan");
         }
         else

@@ -183,9 +183,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1357167493}
-  - {fileID: 1962573264}
   - {fileID: 875671366}
+  - {fileID: 1962573264}
+  - {fileID: 1357167493}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &68579637
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 78189348}
   - component: {fileID: 78189347}
   - component: {fileID: 78189346}
-  - component: {fileID: 78189345}
+  - component: {fileID: 78189349}
   m_Layer: 0
   m_Name: Mesin 2
   m_TagString: Untagged
@@ -238,21 +238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &78189345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78189344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3ad115ef323d549932a57fe15d31b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kidnappedText: {fileID: 2128035388}
-  slot: {fileID: 1715681263}
-  isButton: 0
 --- !u!61 &78189346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -365,6 +350,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 445985507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &78189349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78189344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ad115ef323d549932a57fe15d31b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kidnappedText: {fileID: 2128035388}
+  slot: {fileID: 183330094}
+  isButton: 0
 --- !u!1 &112739896
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,155 +398,6 @@ Transform:
   - {fileID: 812758037}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &124010175
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 124010176}
-  - component: {fileID: 124010178}
-  - component: {fileID: 124010177}
-  - component: {fileID: 124010180}
-  - component: {fileID: 124010179}
-  m_Layer: 5
-  m_Name: Slot 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &124010176
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124010175}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 447690964}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &124010177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124010175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.035822365, g: 0.3301887, b: 0.080179535, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5884b0e8e17b1bc4a9c747622cc07b4c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &124010178
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124010175}
-  m_CullTransparentMesh: 1
---- !u!114 &124010179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124010175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b527dd41ebd34c34bbb4423721e7af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 1447886732}
-  inventory: {fileID: 447690968}
-  kidnapSystem: {fileID: 1357167491}
-  i: 2
---- !u!114 &124010180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124010175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 124010177}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 124010179}
-        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
-        m_MethodName: DropItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &154181920
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +654,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 1204585594}
   inventory: {fileID: 447690968}
-  kidnapSystem: {fileID: 875671363}
+  kidnapSystem:
+  - {fileID: 875671367}
+  - {fileID: 1962573266}
+  - {fileID: 1357167497}
   i: 0
 --- !u!114 &183330095
 MonoBehaviour:
@@ -1142,14 +996,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 183330091}
-  - {fileID: 1715681260}
-  - {fileID: 124010176}
   m_Father: {fileID: 1053707477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 429}
-  m_SizeDelta: {x: 364.9437, y: 134.1534}
+  m_AnchoredPosition: {x: 0, y: 431}
+  m_SizeDelta: {x: 145.3748, y: 134.1534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &447690965
 MonoBehaviour:
@@ -1227,11 +1079,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9880766fb919ffe45b6545652659b9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 000000
+  isFull: 00
   slots:
   - {fileID: 183330090}
-  - {fileID: 1715681259}
-  - {fileID: 124010175}
 --- !u!1 &473365092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2064,7 @@ GameObject:
   - component: {fileID: 875671366}
   - component: {fileID: 875671365}
   - component: {fileID: 875671364}
-  - component: {fileID: 875671363}
+  - component: {fileID: 875671367}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -2222,25 +2072,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &875671363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875671362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea424bbb0801b97489615e171f4827e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emptyBag: {fileID: 509951675}
-  fullBag: {fileID: 1241822527}
-  npc: {fileID: 875671362}
-  kidnappedText: {fileID: 2128035388}
-  inventory: {fileID: 447690968}
-  itemButton: {fileID: 3000519311735066741, guid: 560f23408d270c54ebe4941986367c61, type: 3}
-  canPickup: 0
 --- !u!61 &875671364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2353,6 +2184,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 39409843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875671367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875671362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea424bbb0801b97489615e171f4827e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptyBag: {fileID: 509951675}
+  fullBag: {fileID: 1241822527}
+  npc: {fileID: 875671362}
+  kidnappedText: {fileID: 2128035388}
+  inventory: {fileID: 447690968}
+  itemButton: {fileID: 3000519311735066741, guid: 560f23408d270c54ebe4941986367c61, type: 3}
+  canPickup: 0
 --- !u!1 &1019596551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,7 +2516,7 @@ GameObject:
   - component: {fileID: 1204585598}
   - component: {fileID: 1204585597}
   - component: {fileID: 1204585596}
-  - component: {fileID: 1204585595}
+  - component: {fileID: 1204585599}
   m_Layer: 0
   m_Name: Mesin
   m_TagString: Untagged
@@ -2674,21 +2524,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1204585595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204585594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3ad115ef323d549932a57fe15d31b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kidnappedText: {fileID: 2128035388}
-  slot: {fileID: 183330094}
-  isButton: 0
 --- !u!61 &1204585596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2801,6 +2636,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 445985507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204585599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204585594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ad115ef323d549932a57fe15d31b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kidnappedText: {fileID: 2128035388}
+  slot: {fileID: 183330094}
+  isButton: 0
 --- !u!1 &1241822527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,10 +2937,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1357167493}
   - component: {fileID: 1357167492}
-  - component: {fileID: 1357167494}
-  - component: {fileID: 1357167491}
-  - component: {fileID: 1357167495}
   - component: {fileID: 1357167496}
+  - component: {fileID: 1357167494}
+  - component: {fileID: 1357167497}
+  - component: {fileID: 1357167495}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -3098,25 +2948,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1357167491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357167490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea424bbb0801b97489615e171f4827e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emptyBag: {fileID: 509951675}
-  fullBag: {fileID: 1241822527}
-  npc: {fileID: 1357167490}
-  kidnappedText: {fileID: 2128035388}
-  inventory: {fileID: 447690968}
-  itemButton: {fileID: 3000519311735066741, guid: 560f23408d270c54ebe4941986367c61, type: 3}
-  canPickup: 0
 --- !u!212 &1357167492
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3267,6 +3098,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1357167497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357167490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea424bbb0801b97489615e171f4827e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptyBag: {fileID: 509951675}
+  fullBag: {fileID: 1241822527}
+  npc: {fileID: 1357167490}
+  kidnappedText: {fileID: 2128035388}
+  inventory: {fileID: 447690968}
+  itemButton: {fileID: 3000519311735066741, guid: 560f23408d270c54ebe4941986367c61, type: 3}
+  canPickup: 0
 --- !u!1 &1447886732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,7 +3128,7 @@ GameObject:
   - component: {fileID: 1447886736}
   - component: {fileID: 1447886735}
   - component: {fileID: 1447886734}
-  - component: {fileID: 1447886733}
+  - component: {fileID: 1447886737}
   m_Layer: 0
   m_Name: Mesin 3
   m_TagString: Untagged
@@ -3286,21 +3136,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1447886733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447886732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3ad115ef323d549932a57fe15d31b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kidnappedText: {fileID: 2128035388}
-  slot: {fileID: 124010179}
-  isButton: 0
 --- !u!61 &1447886734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3413,6 +3248,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 445985507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1447886737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447886732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ad115ef323d549932a57fe15d31b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kidnappedText: {fileID: 2128035388}
+  slot: {fileID: 183330094}
+  isButton: 0
 --- !u!1 &1533051215
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,155 +3907,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1715681259
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1715681260}
-  - component: {fileID: 1715681262}
-  - component: {fileID: 1715681261}
-  - component: {fileID: 1715681264}
-  - component: {fileID: 1715681263}
-  m_Layer: 5
-  m_Name: Slot 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1715681260
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715681259}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 447690964}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1715681261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715681259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.035822365, g: 0.3301887, b: 0.080179535, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5884b0e8e17b1bc4a9c747622cc07b4c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1715681262
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715681259}
-  m_CullTransparentMesh: 1
---- !u!114 &1715681263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715681259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b527dd41ebd34c34bbb4423721e7af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 78189344}
-  inventory: {fileID: 447690968}
-  kidnapSystem: {fileID: 1962573262}
-  i: 1
---- !u!114 &1715681264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715681259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1715681261}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1715681263}
-        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
-        m_MethodName: DropItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1920897622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4288,7 +3989,7 @@ GameObject:
   - component: {fileID: 1962573264}
   - component: {fileID: 1962573263}
   - component: {fileID: 1962573265}
-  - component: {fileID: 1962573262}
+  - component: {fileID: 1962573266}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -4296,25 +3997,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1962573262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962573261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea424bbb0801b97489615e171f4827e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emptyBag: {fileID: 509951675}
-  fullBag: {fileID: 1241822527}
-  npc: {fileID: 1962573261}
-  kidnappedText: {fileID: 2128035388}
-  inventory: {fileID: 447690968}
-  itemButton: {fileID: 3000519311735066741, guid: 560f23408d270c54ebe4941986367c61, type: 3}
-  canPickup: 0
 --- !u!212 &1962573263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4427,6 +4109,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1962573266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962573261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea424bbb0801b97489615e171f4827e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptyBag: {fileID: 509951675}
+  fullBag: {fileID: 1241822527}
+  npc: {fileID: 1962573261}
+  kidnappedText: {fileID: 2128035388}
+  inventory: {fileID: 447690968}
+  itemButton: {fileID: 3000519311735066741, guid: 560f23408d270c54ebe4941986367c61, type: 3}
+  canPickup: 0
 --- !u!1 &1968316920
 GameObject:
   m_ObjectHideFlags: 0
