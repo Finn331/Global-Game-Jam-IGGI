@@ -1,27 +1,25 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using Unity.VisualScripting;
-public class CountdownTimer : MonoBehaviour
+
+public class Machine : MonoBehaviour
 {
-    public float countdownTime = 30f;
-    private float currentTime;
-    public TextMeshProUGUI timerText;
+    public float countdownTimer = 5f; // Waktu hitung mundur dalam detik
+    private float currentTimer;
+    private bool isTimerRunning = false;
+    private KidnapSystemV2 kidnapSystem;
 
     void Start()
     {
-        currentTime = countdownTime;
-        //UpdateTimerText();
-        //StartCoroutine(StartCountdown());
+        currentTimer = countdownTimer;
+        kidnapSystem = GameObject.Find("Player").GetComponent<KidnapSystemV2>();
     }
 
-     void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "NPC")
         {
-            UpdateTimerText();
-            StartCoroutine(StartCountdown());
+            // Jika bersentuhan dengan NPC, mulai hitung mundur
+            StartCountdown();
         }
     }
 
@@ -29,36 +27,54 @@ public class CountdownTimer : MonoBehaviour
     {
         if (other.tag == "NPC")
         {
-            StopCoroutine(StartCountdown());
+            // Jika tidak bersentuhan dengan NPC, hentikan hitung mundur
+            StopCountdown();
+            currentTimer = countdownTimer;
         }
     }
 
-    IEnumerator StartCountdown()
+    void StartCountdown()
     {
-        while (currentTime > 0f)
+        if (!isTimerRunning)
+        {
+            isTimerRunning = true;
+            StartCoroutine(CountdownCoroutine());
+        }
+    }
+
+    void StopCountdown()
+    {
+        isTimerRunning = false;
+        StopAllCoroutines();
+        Debug.Log("Countdown stopped");
+    }
+
+    IEnumerator CountdownCoroutine()
+    {
+        while (currentTimer > 0f)
         {
             yield return new WaitForSeconds(1f);
-            currentTime -= 1f;
-            UpdateTimerText();
+            currentTimer--;
+
+            // Debug log selama hitung mundur
+            Debug.Log("Countdown: " + currentTimer);
         }
 
-        // Waktu habis, lakukan tindakan yang diinginkan di sini
-        Debug.Log("Waktu Habis!");
-
-        // Optional: Anda dapat menambahkan tindakan tambahan saat waktu habis di sini
-
-        // Reset timer untuk penggunaan selanjutnya
-        currentTime = countdownTime;
-        UpdateTimerText();
-        StartCoroutine(StartCountdown());
+        // Waktu habis, hancurkan NPC dan hentikan timer
+        DestroyAllChildrenOf(gameObject);
+        Debug.Log("NPC Destroyed");
+        kidnapSystem.machineOccupied = false;
+        kidnapSystem.machine2Occupied = false;
+        kidnapSystem.machine3Occupied = false;
+        StopCountdown();
     }
 
-    void UpdateTimerText()
+    void DestroyAllChildrenOf(GameObject parent)
     {
-        // Pastikan timerText tidak null
-        if (timerText != null)
+        // Loop melalui semua anak dan hancurkan masing-masing
+        foreach (Transform child in parent.transform)
         {
-            timerText.text = "Time: " + Mathf.Ceil(currentTime).ToString();
+            Destroy(child.gameObject);
         }
     }
 }

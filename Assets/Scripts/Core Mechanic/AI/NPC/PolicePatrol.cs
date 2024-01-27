@@ -13,11 +13,11 @@ public class PolicePatrol : MonoBehaviour
     public Transform player;
     private Animator animator;
 
-    private KidnapSystem kidnapSystem;
+    private KidnapSystemV2 kidnapSystem;
 
     void Start()
     {
-        kidnapSystem = FindObjectOfType<KidnapSystem>();
+        kidnapSystem = GameObject.Find("Player").GetComponent<KidnapSystemV2>();
         animator = GetComponent<Animator>();
 
         if (waypoints.Length == 0)
@@ -35,7 +35,7 @@ public class PolicePatrol : MonoBehaviour
         // Check for the player in detection range using raycast
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, detectionRange);
 
-        if (hit.collider != null/* && kidnapSystem.fullBag.activeSelf*/)
+        if (hit.collider != null && kidnapSystem.fullBag.activeSelf)
         {
             if (hit.collider.CompareTag("Player"))
             {

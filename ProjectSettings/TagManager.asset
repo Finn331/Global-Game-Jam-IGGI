@@ -9,8 +9,8 @@ TagManager:
   - Human
   - NPC
   - Machine
-  - Machine 2
-  - Machine 3
+  - Machine2
+  - Machine3
   layers:
   - Default
   - TransparentFX

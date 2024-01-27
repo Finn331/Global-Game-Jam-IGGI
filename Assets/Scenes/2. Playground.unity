@@ -317,9 +317,10 @@ GameObject:
   - component: {fileID: 407188825}
   - component: {fileID: 407188828}
   - component: {fileID: 407188827}
+  - component: {fileID: 407188829}
   m_Layer: 0
   m_Name: Mesin 3
-  m_TagString: Machine 3
+  m_TagString: Machine3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,6 +437,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &407188829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407188824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc93e66927f5654ea1fb89595460e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: 5
 --- !u!224 &584187306 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5147191443527063362, guid: 146daedaca040c246a3385a9e651fff3, type: 3}
@@ -1116,8 +1130,13 @@ MonoBehaviour:
   npcTag: NPC
   machineTags:
   - Machine
-  - Machine 2
-  - Machine 3
+  - Machine2
+  - Machine3
+  emptyBag: {fileID: 1365548103}
+  fullBag: {fileID: 2037812381}
+  machineOccupied: 0
+  machine2Occupied: 0
+  machine3Occupied: 0
 --- !u!1001 &1241263743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1223,6 +1242,11 @@ Transform:
   - {fileID: 121285324}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1365548103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 910922583288435757, guid: fcc496005f0d75a4b8086aa4ea29ac40, type: 3}
+  m_PrefabInstance: {fileID: 1892023139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1413042576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,9 +1542,10 @@ GameObject:
   - component: {fileID: 1619346892}
   - component: {fileID: 1619346895}
   - component: {fileID: 1619346894}
+  - component: {fileID: 1619346896}
   m_Layer: 0
   m_Name: Mesin 2
-  m_TagString: Machine 2
+  m_TagString: Machine2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1637,6 +1662,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1619346896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619346891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc93e66927f5654ea1fb89595460e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: 5
 --- !u!1 &1745636021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,8 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc93e66927f5654ea1fb89595460e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 30
-  timerText: {fileID: 1837914966}
+  countdownTimer: 5
 --- !u!1 &1837914965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,6 +2208,11 @@ Transform:
   - {fileID: 714428008}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2037812381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1090663380689705939, guid: fcc496005f0d75a4b8086aa4ea29ac40, type: 3}
+  m_PrefabInstance: {fileID: 1892023139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096147602
 GameObject:
   m_ObjectHideFlags: 0

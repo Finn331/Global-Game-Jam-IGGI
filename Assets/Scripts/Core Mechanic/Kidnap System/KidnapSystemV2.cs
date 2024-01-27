@@ -3,13 +3,16 @@ using UnityEngine;
 public class KidnapSystemV2 : MonoBehaviour
 {
     public string npcTag = "NPC";
-    public string[] machineTags = { "Machine", "Machine 2", "Machine 3" }; // Tambahkan tag-tag mesin yang valid
+    public string[] machineTags = { "Machine", "Machine2", "Machine3" }; // Tambahkan tag-tag mesin yang valid
     private GameObject carriedNPC;
 
+    public GameObject emptyBag;
+    public GameObject fullBag;
+
     // Tambahkan variabel status Machine untuk setiap tag mesin
-    private bool machineOccupied = false;
-    private bool machine2Occupied = false;
-    private bool machine3Occupied = false;
+    public bool machineOccupied = false;
+    public bool machine2Occupied = false;
+    public bool machine3Occupied = false;
 
     void Update()
     {
@@ -76,6 +79,8 @@ public class KidnapSystemV2 : MonoBehaviour
 
     public void CarryNPC(GameObject npc)
     {
+        emptyBag.SetActive(false);
+        fullBag.SetActive(true);
         // Set objek NPC sebagai child dari pemain, nonaktifkan Rigidbody dan Collider untuk menghindari konflik fisika
         npc.transform.parent = transform;
         npc.GetComponent<SpriteRenderer>().enabled = false;
@@ -89,6 +94,9 @@ public class KidnapSystemV2 : MonoBehaviour
         // Hanya lanjutkan jika pemain mengangkat objek NPC dan objek Machine tidak null
         if (carriedNPC != null && machine != null)
         {
+            fullBag.SetActive(false);
+            emptyBag.SetActive(true);
+
             carriedNPC.GetComponent<SpriteRenderer>().enabled = true;
             carriedNPC.GetComponent<Collider2D>().enabled = true;
             // Set parent dari objek NPC menjadi objek Machine
@@ -123,6 +131,23 @@ public class KidnapSystemV2 : MonoBehaviour
             case "Machine3":
                 machine3Occupied = true;
                 break;
+        }
+    }
+
+    private bool AreMachinesEmpty()
+    {
+        // Return true if all machines are not occupied
+        return !machineOccupied && !machine2Occupied && !machine3Occupied;
+    }
+
+    void LateUpdate()
+    {
+        // Check if all machines are empty, and set the status to false
+        if (AreMachinesEmpty())
+        {
+            machineOccupied = false;
+            machine2Occupied = false;
+            machine3Occupied = false;
         }
     }
 }
