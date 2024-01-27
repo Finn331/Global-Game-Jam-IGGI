@@ -19,7 +19,6 @@ public class KidnapSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // isKidnapped = false;
         emptyBag.SetActive(true);
     }
 
@@ -62,19 +61,6 @@ public class KidnapSystem : MonoBehaviour
                 npc.SetActive(false);
                 break;
             }
-        }
-    }
-
-    public void SetNPCActive(bool isActive)
-    {
-        if (npc != null)
-        {
-            npc.SetActive(true);
-            Debug.Log("NPC diaktifkan atau dinonaktifkan");
-        }
-        else
-        {
-            Debug.LogWarning("NPC reference is null!");
         }
     }
 }

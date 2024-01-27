@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1910679666379840702}
   - component: {fileID: 7679111190418253817}
   m_Layer: 5
-  m_Name: Npc Prefab
+  m_Name: Npc Prefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
