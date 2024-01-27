@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 5d5c921e38bba2f459921421317e9bef
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Rainbow 2000
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: fcb499837d431b34785650df65f9e905, type: 3}
+  - {fileID: 12800000, guid: 255705a336a2c6c428ea5a588a4d5b2e, type: 3}
+  - {fileID: 12800000, guid: b6a5b040ba4fd1b4a98224e8fb0f84ef, type: 3}
+  - {fileID: 12800000, guid: b67593310121a15428ecddd3d6e743e8, type: 3}
+  - {fileID: 12800000, guid: f457d42ddb6ab5343b35b9202b3e2d7a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
