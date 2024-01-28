@@ -12,8 +12,11 @@ public class Battery : MonoBehaviour
 
     private LightSwitch lightSwitch;
 
+    private PolicePatrol policePatrol;
+
     void Start()
     {
+        policePatrol = FindObjectOfType<PolicePatrol>();
         if (batterySlider != null)
         {
             InitializeBatteryBar();
@@ -27,12 +30,17 @@ public class Battery : MonoBehaviour
         if (currentBattery == 0)
         {
             lightSwitch.TurnOffAllLights();
+            policePatrol.Gameover();
+        }
+        if (currentBattery >= 1)
+        {
+            Time.timeScale = 1;
         }
     }
 
     public void InitializeBatteryBar()
     {
-        currentBattery = 50f;
+        currentBattery = 10f;
         UpdateBatteryBar();
     }
 

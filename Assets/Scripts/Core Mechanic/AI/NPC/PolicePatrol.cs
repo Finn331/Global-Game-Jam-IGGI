@@ -18,6 +18,9 @@ public class PolicePatrol : MonoBehaviour
     private AudioSource audioSource;
     private bool hasPlayedAudio = false; // Added flag to track if audio has been played
 
+    public GameObject gameoverPanel;
+
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -58,7 +61,7 @@ public class PolicePatrol : MonoBehaviour
                 }
 
                 // Game over if NPC touches player
-                //kidnapSystem.GameOver();
+                Gameover();
 
                 // Stop walking animation
                 animator.SetBool("isWalking", false);
@@ -147,5 +150,12 @@ public class PolicePatrol : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void Gameover()
+    {
+        gameoverPanel.SetActive(true);
+        Time.timeScale = 0;
+        
     }
 }

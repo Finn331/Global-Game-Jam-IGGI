@@ -152,30 +152,5 @@ public class KidnapSystemV2 : MonoBehaviour
         }
     }
 
-    public void GameOver()
-    {
-        // Reset semua status Machine
-        machineOccupied = false;
-        machine2Occupied = false;
-        machine3Occupied = false;
 
-        // Hapus semua NPC yang ada di dalam scene
-        GameObject[] npcs = GameObject.FindGameObjectsWithTag(npcTag);
-        foreach (var npc in npcs)
-        {
-            Destroy(npc);
-        }
-
-        // Hapus semua objek NPC yang ada di dalam tas
-        if (carriedNPC != null)
-        {
-            Destroy(carriedNPC);
-        }
-
-        // Reset carriedNPC menjadi null agar pemain dapat mengangkat objek NPC yang lain
-        carriedNPC = null;
-
-        // Tampilkan tas kosong
-        emptyBag.SetActive(true);
-    }
 }
