@@ -12,13 +12,18 @@ public class PolicePatrol : MonoBehaviour
     private bool isChasing = false;
     public Transform player;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private KidnapSystemV2 kidnapSystem;
+    private AudioSource audioSource;
+    private bool hasPlayedAudio = false; // Added flag to track if audio has been played
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         kidnapSystem = GameObject.Find("Player").GetComponent<KidnapSystemV2>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent <SpriteRenderer>();
 
         if (waypoints.Length == 0)
         {
@@ -41,15 +46,47 @@ public class PolicePatrol : MonoBehaviour
             {
                 player = hit.collider.transform;
                 isChasing = true;
+
+                // Flip sprite if chasing towards left
+                if (player.position.x < transform.position.x)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else
+                {
+                    spriteRenderer.flipX = false;
+                }
+
+                // Game over if NPC touches player
+                //kidnapSystem.GameOver();
+
+                // Stop walking animation
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isHitting", true);
+
+                // Play audio if it hasn't been played yet
+                if (!hasPlayedAudio)
+                {
+                    audioSource.Play();
+                    hasPlayedAudio = true;
+                }
             }
             else
             {
                 isChasing = false;
+                animator.SetBool("isHitting", false);
+
+                // Reset the flag when the NPC is not colliding with the player
+                hasPlayedAudio = false;
             }
         }
         else
         {
             isChasing = false;
+            animator.SetBool("isHitting", false);
+
+            // Reset the flag when the NPC is not colliding with the player
+            hasPlayedAudio = false;
         }
     }
 
@@ -61,6 +98,16 @@ public class PolicePatrol : MonoBehaviour
             {
                 // Set animation parameter for movement
                 animator.SetBool("isWalking", true);
+
+                // Flip sprite if moving towards left
+                if (waypoints[currentWaypointIndex].position.x < transform.position.x)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else
+                {
+                    spriteRenderer.flipX = false;
+                }
 
                 // Move towards the current waypoint
                 transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, moveSpeed * Time.deltaTime);
@@ -83,6 +130,16 @@ public class PolicePatrol : MonoBehaviour
                 // Set animation parameter for movement
                 animator.SetBool("isWalking", true);
 
+                // Flip sprite if moving towards left
+                if (player.position.x < transform.position.x)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else
+                {
+                    spriteRenderer.flipX = false;
+                }
+
                 // Move towards the player
                 transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
 
@@ -91,5 +148,4 @@ public class PolicePatrol : MonoBehaviour
             yield return null;
         }
     }
-
 }

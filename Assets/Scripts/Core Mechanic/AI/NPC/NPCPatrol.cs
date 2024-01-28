@@ -8,10 +8,12 @@ public class NPCPatrol : MonoBehaviour
 
     private int currentWaypointIndex = 0;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (waypoints.Length == 0)
         {
@@ -20,7 +22,22 @@ public class NPCPatrol : MonoBehaviour
             return;
         }
 
+        // Randomize the order of waypoints
+        waypoints = ShuffleArray(waypoints);
+
         StartCoroutine(Patrol());
+    }
+
+    Transform[] ShuffleArray(Transform[] array)
+    {
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+            Transform temp = array[i];
+            array[i] = array[randomIndex];
+            array[randomIndex] = temp;
+        }
+        return array;
     }
 
     IEnumerator Patrol()
@@ -31,10 +48,21 @@ public class NPCPatrol : MonoBehaviour
             animator.SetBool("isWalking", true);
 
             // Move towards the current waypoint
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, moveSpeed * Time.deltaTime);
+            Vector2 targetPosition = waypoints[currentWaypointIndex].position;
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            // Check the direction of movement and flip the sprite accordingly
+            if (targetPosition.x < transform.position.x)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+                spriteRenderer.flipX = false;
+            }
 
             // Check if the NPC has reached the current waypoint
-            if (Vector2.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
+            if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
             {
                 // Stop walking animation
                 animator.SetBool("isWalking", false);

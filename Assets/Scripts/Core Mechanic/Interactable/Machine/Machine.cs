@@ -9,11 +9,19 @@ public class Machine : MonoBehaviour
     private KidnapSystemV2 kidnapSystem;
     public Battery battery;
 
+    public AudioClip npcSound; // Add the AudioClip for the countdown sound
+    private AudioSource audioSource;
+    private NPCPatrol npcPatrol;
+
     void Start()
     {
         currentTimer = countdownTimer;
         kidnapSystem = GameObject.Find("Player").GetComponent<KidnapSystemV2>();
         battery = GameObject.Find("Laughinator Bar").GetComponent<Battery>();
+
+        // Initialize the AudioSource component
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true; // Set the loop property to true for looping sound
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -21,6 +29,8 @@ public class Machine : MonoBehaviour
         if (other.tag == "NPC")
         {
             StartCountdown();
+            npcPatrol = other.GetComponent<NPCPatrol>();
+            npcPatrol.StopAllCoroutines();
         }
     }
 
@@ -41,6 +51,13 @@ public class Machine : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(CountdownCoroutine());
             battery.Mulai();
+
+            // Play the countdown sound when the countdown starts
+            if (npcSound != null)
+            {
+                audioSource.clip = npcSound;
+                audioSource.Play();
+            }
         }
     }
 
@@ -51,6 +68,9 @@ public class Machine : MonoBehaviour
         Debug.Log("Countdown stopped");
         battery.StopCountdown();
         battery.Kurang();
+
+        // Stop the countdown sound when the countdown stops
+        audioSource.Stop();
     }
 
     IEnumerator CountdownCoroutine()

@@ -10,17 +10,29 @@ public class Battery : MonoBehaviour
     private Coroutine increaseBatteryCoroutine;
     private Coroutine decreaseBatteryCoroutine;
 
+    private LightSwitch lightSwitch;
+
     void Start()
     {
         if (batterySlider != null)
         {
             InitializeBatteryBar();
         }
+
+        lightSwitch = FindObjectOfType<LightSwitch>();
+    }
+
+    private void Update()
+    {
+        if (currentBattery == 0)
+        {
+            lightSwitch.TurnOffAllLights();
+        }
     }
 
     public void InitializeBatteryBar()
     {
-        currentBattery = 1f;
+        currentBattery = 50f;
         UpdateBatteryBar();
     }
 
@@ -66,6 +78,11 @@ public class Battery : MonoBehaviour
         }
 
         Debug.Log("Countdown stopped");
+    }
+
+    public float GetCurrentBattery()
+    {
+        return currentBattery;
     }
 
     public IEnumerator IncreaseBattery()
