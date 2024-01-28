@@ -5,13 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public void Play()
-    {
-        SceneManager.LoadScene("2. Playground");
-    }
+    public GameObject HTPPanel;
+    public GameObject backHtp;
 
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void HtpButton()
+    {
+        HTPPanel.SetActive(true);
+        backHtp.SetActive(true);
+    }
+
+    public void HtpBack()
+    {
+        HTPPanel.SetActive(false);
+        backHtp.SetActive(false);
     }
 }
