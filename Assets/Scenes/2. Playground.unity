@@ -1991,7 +1991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc93e66927f5654ea1fb89595460e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTimer: 5
+  countdownTimer: 30
   battery: {fileID: 0}
 --- !u!1 &414523770
 GameObject:
@@ -7814,7 +7814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc93e66927f5654ea1fb89595460e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTimer: 5
+  countdownTimer: 30
   battery: {fileID: 0}
 --- !u!114 &1661145415 stripped
 MonoBehaviour:
@@ -8436,7 +8436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc93e66927f5654ea1fb89595460e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTimer: 5
+  countdownTimer: 30
   battery: {fileID: 0}
 --- !u!1 &1788091832
 GameObject:
@@ -9555,7 +9555,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   batterySlider: {fileID: 1948647270}
   maxBattery: 100
-  isIncreasingBattery: 0
 --- !u!1 &1982280693
 GameObject:
   m_ObjectHideFlags: 0
