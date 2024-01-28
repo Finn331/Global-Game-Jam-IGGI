@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject HTPPanel;
-    public GameObject backHtp;
+
+    void Start()
+    {
+        HTPPanel.SetActive(false);
+    }
 
     public void Exit()
     {
@@ -16,12 +20,10 @@ public class MainMenuManager : MonoBehaviour
     public void HtpButton()
     {
         HTPPanel.SetActive(true);
-        backHtp.SetActive(true);
     }
 
     public void HtpBack()
     {
         HTPPanel.SetActive(false);
-        backHtp.SetActive(false);
     }
 }
