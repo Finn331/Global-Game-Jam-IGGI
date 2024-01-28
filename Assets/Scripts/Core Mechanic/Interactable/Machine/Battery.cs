@@ -30,7 +30,7 @@ public class Battery : MonoBehaviour
         if (currentBattery == 0)
         {
             lightSwitch.TurnOffAllLights();
-            policePatrol.Gameover();
+            
         }
         if (currentBattery >= 1)
         {
@@ -117,6 +117,7 @@ public class Battery : MonoBehaviour
         if (currentBattery == 0)
         {
             StopCoroutine(DecreaseBattery());
+            policePatrol.Gameover();
         }
     }
 
